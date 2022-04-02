@@ -1,3 +1,5 @@
+// STL stack 을 직접 구현
+
 #include <iostream>
 using namespace std;
 
