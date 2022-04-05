@@ -34,7 +34,7 @@ int main(void)
 				}
 				cout << key;		// 띄어쓰기 출력
 			}
-			else 
+			else
 				st.push(key);
 		}
 		cout << '\n';
