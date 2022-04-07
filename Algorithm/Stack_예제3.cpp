@@ -33,7 +33,7 @@ void CheckFunc(string str)
 	if (st.empty()) cout << "YES" << "\n";
 	else
 	{
-		while (!st.empty()) st.pop();		// 스택 초기회
+		while (!st.empty()) st.pop();		// 스택 초기화
 		cout << "NO" << "\n";
 	}
 }

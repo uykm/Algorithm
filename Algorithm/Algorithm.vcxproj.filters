@@ -30,5 +30,8 @@
     <ClCompile Include="Stack_Vector_예제1.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Stack_예제4.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
