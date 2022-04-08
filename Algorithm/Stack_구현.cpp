@@ -92,4 +92,6 @@ int main(void)
             cout << s.Size() << '\n';
         }
     }
+
+    return 0;
 }
