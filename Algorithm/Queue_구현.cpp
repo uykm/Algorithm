@@ -1,3 +1,8 @@
+/*
+queue 선언
+- queue<데이터 타입> 이름;
+*/
+
 #include <iostream>
 #include <string>
 #define SIZE 10001
