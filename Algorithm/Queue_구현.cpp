@@ -1,4 +1,6 @@
 /*
+* 큐(Queue) : FIFO(First In First Out) 구조
+* 기본 함수 : push, pop, empty, front, back, swap
 queue 선언
 - queue<데이터 타입> 이름;
 */
@@ -51,7 +53,7 @@ public:
 			front_index = (front_index + 1) % SIZE;
 		}
 	}
-	int size()
+	T size()
 	{
 		int front = front_index;
 		int size = 1;
@@ -67,12 +69,12 @@ public:
 	{
 		return (front_index == -1) ? true : false;
 	}
-	int front()
+	T front()
 	{
 		if (empty())	return -1;
 		return values[front_index];
 	}
-	int back()
+	T back()
 	{
 		if (empty())	return -1;
 		return values[back_index];
