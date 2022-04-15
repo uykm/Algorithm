@@ -1,3 +1,4 @@
+// https://www.acmicpc.net/problem/1874
 #include <iostream>
 #include <string>
 #include <stack>

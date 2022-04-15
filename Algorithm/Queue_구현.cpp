@@ -1,3 +1,4 @@
+// https://www.acmicpc.net/problem/10845
 /*
 * 큐(Queue) : FIFO(First In First Out) 구조
 * 기본 함수 : push, pop, empty, front, back, swap

@@ -1,3 +1,4 @@
+// https://www.acmicpc.net/problem/10866
 /*
 * 덱(Deque) : 양방향 큐(Doubled-Ended Queue)의 줄임말
 
