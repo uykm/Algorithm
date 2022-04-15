@@ -1,75 +1,104 @@
 // https://www.acmicpc.net/problem/10866
 /*
 * 덱(Deque) : 양방향 큐(Doubled-Ended Queue)의 줄임말
-
+* 기본 함수 : push_back(), pop_back(), push_front(), pop_front()
+			 , insert(iterator, 원소 x), erase(iterator), empty(), size()
+* 큐(Queue) 와 달리 iterator를 이용하여 중간에 데이터 삽입과 삭제가 가능!
+* 또한, 개별 원소들을 Index 로 접근 가능!
+* 앞/뒤의 데이터 삽입 삭제가 자주 발생할 경우에 사용!
+* 삽입 / 삭제 : list > deque > vector (삽입/삭제가 느림)
+* 검색 속도 : vector > deque > list (Index로 원소에 직접 접근이 불가능해서 접근이 느림)
 */
+// ★ 항상 조건문을 사용할 땐, 모든 경우를 고려하여 사용하기!
+
 #include <iostream>
 #include <string>
+#define maxSize 10001
 using namespace std;
 
 class Deque
 {
 private:
-	int frontIndex;
-	int backIndex;
 	int dataSize;
-	int maxSize;
 	int* deque;
 public:
-	Deque(const int size = 10001)
+	Deque()
 	{
-		frontIndex = 0;
-		backIndex = 1;
 		dataSize = 0;
-		maxSize = size;
-		deque = new int[size];
+		deque = new int[maxSize];
 	}
 
 	void push_front(const int data)
 	{
-		deque[frontIndex] = data;
-		frontIndex = ((frontIndex - 1) + maxSize) % maxSize;
-		dataSize++;
+		if (empty())
+		{
+			deque[0] = data;
+			dataSize++;
+		}
+		else
+		{
+			for (int i = dataSize - 1; i >= 0; i--)
+			{
+				deque[i + 1] = deque[i];
+			}
+			deque[0] = data;
+			dataSize++;
+		}
 	}
 	void push_back(const int data)
 	{
-		deque[backIndex] = data;
-		backIndex = ((backIndex - 1) + maxSize) % maxSize;
-		dataSize++;
+		if (empty())
+		{
+			deque[0] = data;
+			dataSize++;
+		}
+		else
+		{
+			deque[dataSize] = data;
+			dataSize++;
+		}
 	}
 	void pop_front()
 	{
-		int frontData = front();
-		frontIndex = (frontIndex + 1) % maxSize;
-		dataSize--;
+		cout << deque[0] << '\n';
+		if (dataSize == 1)
+		{
+			deque[0] = 0;
+			dataSize = 0;
+		}
+		else
+		{
+			for (int i = 0; i < dataSize; i++)
+			{
+				int tmp = deque[i + 1];
+				deque[i] = tmp;
+			}
+			dataSize--;
+		}
 	}
 	void pop_back()
 	{
-		int backData = back();
-		backIndex = (backIndex + 1) % maxSize;
+		cout << deque[dataSize-1] << '\n';
 		dataSize--;
+		if (empty())		deque[0] = 0;
 	}
 	int size()
 	{
-		if (dataSize < 0)	dataSize = 0;
 		return dataSize;
 	}
 	int empty()
 	{
-		if (dataSize < 0)	dataSize = 0;
 		return dataSize == 0;
 	}
 	int front()
 	{
 		if (empty()) return -1;
-		int tempIndex = (frontIndex + 1) % maxSize;
-		return deque[tempIndex];
+		return deque[0];
 	}
 	int back()
 	{
 		if (empty()) return -1;
-		int tempIndex = ((backIndex-1) + maxSize) % maxSize;
-		return deque[tempIndex];
+		return deque[dataSize - 1];
 	}
 	~Deque()
 	{
@@ -98,17 +127,17 @@ int main(void)
 		{
 			int n;
 			cin >> n;
-			dq.push_front(n);
+			dq.push_back(n);
 		}
 		else if (cmd == "pop_front")
 		{
 			if (dq.empty()) cout << "-1" << '\n';
-			dq.pop_front();
+			else if (!dq.empty())	dq.pop_front();
 		}
 		else if (cmd == "pop_back")
 		{
 			if (dq.empty()) cout << "-1" << '\n';
-			dq.pop_back();
+			else if (!dq.empty())	dq.pop_back();
 		}
 		else if (cmd == "size")
 		{
