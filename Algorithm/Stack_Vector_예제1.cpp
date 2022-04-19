@@ -2,7 +2,8 @@
 // Vector - 수열을 만들 수 있을 때 필요한 연산들을 저장하는 자료구조
 /*
 	Vector STL
-	vector 선언 => vector<데이터 타입> 이름;
+	vector 선언 => vector<변수 타입> 이름;
+				=> vector<변수 타입> 이름(크기, 초기화 상수);
 	
 	vector<int> v;
 	원소 접근
