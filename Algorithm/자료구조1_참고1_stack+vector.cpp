@@ -16,6 +16,7 @@ int main(void)
 	string input;
 	cin >> N >> input;
 
+
 	vector<int> temp(N);
 	// vector<int> temp; - case 2
 	stack<double> result;
@@ -43,7 +44,7 @@ int main(void)
 				double num2 = result.top();
 				result.pop();
 				char op = input[i];
-				
+
 				double resultNum = 0;
 				resultNum = operate(num1, op, num2);
 				result.push(resultNum);

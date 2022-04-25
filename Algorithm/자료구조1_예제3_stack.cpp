@@ -1,4 +1,4 @@
-// https://www.acmicpc.net/problem/1874
+// https://www.acmicpc.net/problem/9012
 #include <iostream>
 #include <string>
 #include <stack>
