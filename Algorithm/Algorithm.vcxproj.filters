@@ -87,5 +87,8 @@
     <ClCompile Include="수학1_유클리드호제법.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="수학1_유클리드호제법2.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
