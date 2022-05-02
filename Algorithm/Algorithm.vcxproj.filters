@@ -81,5 +81,11 @@
     <ClCompile Include="자료구조1_참고9_vector+substr%28%29+sotrt%28%29.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="수학1_모듈러연산.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="수학1_유클리드호제법.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
